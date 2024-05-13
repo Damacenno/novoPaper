@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperJobs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .entrada_feedback {
+            -webkit-animation: entrada_feedback 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: entrada_feedback 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        }
+
+        @-webkit-keyframes entrada_feedback {
+            0% {
+                -webkit-transform: translateY(-1000px);
+                transform: translateY(-1000px);
+                opacity: 0;
+            }
+
+            100% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes entrada_feedback {
+            0% {
+                -webkit-transform: translateY(-1000px);
+                transform: translateY(-1000px);
+                opacity: 0;
+            }
+
+            100% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .saida_feedback {
+            -webkit-animation: saida_feedback 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+            animation: saida_feedback 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        }
+
+        @-webkit-keyframes saida_feedback {
+            0% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                -webkit-transform: translateY(-1000px);
+                transform: translateY(-1000px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes saida_feedback {
+            0% {
+                -webkit-transform: translateY(0);
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                -webkit-transform: translateY(-1000px);
+                transform: translateY(-1000px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="w-full h-full flex items-center justify-center bg-red-500">
+        <div id="feedbackLogin" class="entrada_feedback hidden fixed top-0 w-full h-16 bg-green-400">
+            
+        </div>
+        <div class="max-w-md relative flex flex-col p-12 rounded-md text-black bg-white">
+            <div class="text-2xl font-bold mb-2 text-[#1e0e4b] text-center">Bem vindo a <span
+                    class="text-red-700">PaperJobs</span></div>
+            <div class="text-sm font-normal mb-4 text-center text-[#1e0e4b]">Entre na sua conta</div>
+            <div class="flex flex-col gap-3">
+                <div class="block relative">
+                    <label for="email"
+                        class="block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2">Login</label>
+                    <input type="text" id="campo_login"
+                        class="rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2  ring-gray-900 outline-0">
+
+                </div>
+                <div class="block relative">
+                    <label for="password"
+                        class="block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2">Senha</label>
+                    <input type="password" id="campo_senha"
+                        class="rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2 ring-gray-900 outline-0">
+
+                </div>
+                <div>
+                    <a class="text-sm text-red-700" href="#">Esqueceu sua senha?
+                    </a>
+                </div>
+                <button onclick="requisitarLogin()" type="submit"
+                    class="bg-red-500 w-max m-auto px-6 py-2 rounded text-white text-sm font-normal hover:bg-red-800">Entrar</button>
+
+            </div>
+            <div class="text-sm text-center mt-[1.6rem]">Ainda não tem uma conta? <a class="text-sm text-red-700"
+                    href="#">Crie de graça!</a></div>
+        </div>
+        <div id="feedbackTecnico" class="hidden fixed w-full h-full bg-black/60">
+            <div>
+
+            </div>
+        </div>
+    </main>
+</body>
+<script src="javascript/jquery-3.7.1.min.js"></script>
+<script src="javascript/login.js"></script>
+
+</html>
