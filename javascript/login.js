@@ -13,7 +13,7 @@ function requisitarLogin() {
     }).done(function (response) {
         switch (response) {
             case '0':
-                window.location.href = 'home.html';
+                window.location.href = 'home.php';
                 break;
             case '1':
                 mostrarFeedback();

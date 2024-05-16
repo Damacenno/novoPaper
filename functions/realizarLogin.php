@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once('../functions/connect.php');
 
@@ -6,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $login = $_POST['login'];
     $senha = $_POST['senha'];
 
-    $sql = "SELECT `usuario_id`, `usuario_senha` FROM `usuarios` WHERE `usuario_login` = ?";
+    $sql = "SELECT `usuario_id`, `usuario_senha`, `usuario_pontos` FROM `usuarios` WHERE `usuario_login` = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $login);
     $stmt->execute();
@@ -18,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         if (password_verify($senha, $senha_hash)) {
             $_SESSION['usuario_id'] = $row['usuario_id'];
+            $_SESSION['usuario_pontos'] = $row['usuario_pontos'];
             echo 0; // BEM SUCEDIDO
         } else {
             echo 2; // SENHA INCORRETA
