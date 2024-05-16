@@ -69,8 +69,8 @@
     <section class="bg-white">
         <div class="container px-6 py-10 mx-auto">
             <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl">Serviços Paper</h1>
-
-            <div class="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-4">
+            <hr class="mt-4">
+            <div class="grid grid-cols-1 gap-8 mt-4 md:grid-cols-4">
                 <div class="flex justify-center">
                     <div class="w-80 p-4 bg-white rounded-lg shadow-md transform hover:scale-105 transition-transform duration-300 ease-in-out">
                         <img class="w-full h-40 object-cover rounded-t-lg" alt="Card Image" src="https://via.placeholder.com/150">
